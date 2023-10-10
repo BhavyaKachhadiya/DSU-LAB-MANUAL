@@ -1,30 +1,26 @@
 #include <iostream>
 using namespace std;
-
-class Max {
-private:
-    int num1, num2, num3;
-
+class Largest {
 public:
-    void getdata() {
-        cout << "Enter three numbers: ";
-        cin >> num1 >> num2 >> num3;
-    }
+  Largest(int a, int b, int c) : a(a), b(b), c(c) {}
 
-    int findLargest() {
-        return (num1 > num2) ? ((num1 > num3) ? num1 : num3) : ((num2 > num3) ? num2 : num3);
-    }
+  int largest() {
+    return compare_numbers(a, compare_numbers(b, c));
+  }
 
-    void putdata() {
-        cout << "The largest number is: " << findLargest() << endl;
-    }
+private:
+  int a, b, c;
+
+  int compare_numbers(int x, int y) {
+    return x > y ? x : y;
+  }
 };
-
 int main() {
-    Max m;
-    
-    m.getdata();
-    m.putdata();
+  Largest largest(10, 20, 30);
 
-    return 0;
+  int largest_number = largest.largest();
+
+  cout << "The largest number is: " << largest_number << endl;
+
+  return 0;
 }
