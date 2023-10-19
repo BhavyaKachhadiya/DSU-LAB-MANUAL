@@ -1,38 +1,24 @@
 #include <iostream>
-#include <cmath>
-
 using namespace std;
-
-float volume(float side) {
-  // Volume of a cube
-  return side * side * side;
+int Volume(int n)
+{
+    return n*n*n;
 }
-
-float volume(float radius, float height) {
-  // Volume of a cylinder
-  return 3.14 * radius * radius * height;
+float Volume(float r,float h)
+{
+    return 3.14*r*r*h;
 }
-
-float volume(float length, float breadth, float height) {
-  // Volume of a rectangular box
-  return length * breadth * height;
+float Volume(float l,float h,float w)
+{
+    return l*h*w;
 }
+int main()
+{
+   int cube= Volume(3);
+   float cylinder= Volume(3.4,2.4);
+   float rectangle= Volume(3.4,3.4,2.4);
 
-int main() {
-  float side, radius, height, length, breadth;
-
-  cout << "Enter the side of the cube: ";
-  cin >> side;
-
-  cout << "Enter the radius and height of the cylinder: ";
-  cin >> radius >> height;
-
-  cout << "Enter the length, breadth and height of the rectangular box: ";
-  cin >> length >> breadth >> height;
-
-  cout << "Volume of the cube: " << volume(side) << endl;
-  cout << "Volume of the cylinder: " << volume(radius, height) << endl;
-  cout << "Volume of the rectangular box: " << volume(length, breadth, height) << endl;
-
-  return 0;
+   cout<<"Cube: "<<cube<<endl;
+   cout<<"cylinder: "<<cylinder<<endl;
+   cout<<"rectangle: "<<rectangle<<endl;
 }
